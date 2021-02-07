@@ -1,0 +1,223 @@
+the runtime system starts yout program by calling which function first?
+- main
+--------------------------------------------------------------------------------
+what code would you use to tell if "schwifty" is of type String?
+- "schwifty" instanceof String
+--------------------------------------------------------------------------------
+what does this code print?
+- System.out.print("apple".compareTo("chuchu")); === negative number
+obs: compareTo é usado para comparar duas string lexicograicamente.
+cada caracter de ambas as string são convertidos em unicode para comparação.
+se ambas forem iguais irá retornar zero, se não num numero positivo ou negativo...
+--------------------------------------------------------------------------------
+what is the output of this code?
+class Main{
+    public static void main(String[] args) {
+        int a = 123451234512345;
+        System.out.println(a);
+    }
+}
+- Não vai nem compilar, pois o numero é muito grande.
+--------------------------------------------------------------------------------
+- An anounymous class may specify an interface as its base type. = TRUE
+- An anounymous class does not require a zero-argument constructor. = FALSE
+- An anounymous class may specify an abstract base class as its base type. = TRUE
+- An anounymous class may specify both an abstract class and interface as base types. = TRUE
+obs: classes anonimas são como classes locais mas sem nome.
+--------------------------------------------------------------------------------
+What is the output of this code?
+class Main {
+    public static void main(String[] args) {
+        List list = new ArrayList();
+        list.add("hello");
+        list.add(2);
+        System.out.print(list.get(0) instanceof Object);
+        System.out.print(list.get(1) instanceof Integer);
+    }
+}
+- truetrue
+--------------------------------------------------------------------------------
+How many times will this code print "Hello world!"
+class Main {
+    public static void main(String[] args) {
+sout    
+    }
+}
+- 10 vezes
+--------------------------------------------------------------------------------
+What is the result of the code?
+    try {
+        System.out.println("OPA");
+    } catch (Exception e) {
+        System.out.println("e");
+    } catch (ArithmeticException e) {
+        System.out.println("e");
+    } finally {
+        System.out.println("aaaaaa");
+    }
+- Não vai compilar pois já existe uma exceção definida como "e".
+--------------------------------------------------------------------------------
+You have an ArrayList of names that you want to sort alphabetically. Which approach would not work?
+- names.sort(List.DESCENDING);
+--------------------------------------------------------------------------------
+how can you achieve runtime polymorphism in java?
+- method overriding
+Method overload é usado em compile-time polymorphism (sobrecarga de métodos staticos)
+--------------------------------------------------------------------------------
+What is the result of this code:
+public class Application {
+    public static void main(String[] args) {
+        System.out.println(print(1));
+     }
+     static Exception print(int i) {
+        if(i>0) {
+            return new Exception();
+        }else {
+            throw new RuntimeException();
+        }
+     }
+}
+- "java.lang.Exception"
+--------------------------------------------------------------------------------
+what can you use to create new instances in java?
+- constructor
+--------------------------------------------------------------------------------
+Add a Duck called "Waddies" to the ArrayList ducks.
+public class Duck {
+    private String name;
+    Duck(String name) { }
+}
+- ducks.add(new Duck("waddies"));
+--------------------------------------------------------------------------------
+Which is an INVALID way to iterate over List theList?
+- Iterator it = theList.iterator();
+for (it.hasNext() ) {
+    System.out.println(it.next());
+}
+--------------------------------------------------------------------------------
+Which is the most up-to-date way to instantiate the current date?
+- new Date(System.currentTimeMillis());
+--------------------------------------------------------------------------------
+Given the string "strawberries" saved in a variable called fruit, what would fruit.substring(2, 5) return;
+- raw
+--------------------------------------------------------------------------------
+What is the output of this code?
+public class Application {
+    public static void main(String[] args) {
+        String message = "Hello World!";
+        String newMessage = message.substring(6, 12)
+                + message.substring(12, 6);
+        System.out.println(newMessage);
+    }
+}
+
+- Uma exceção será lançada pois 12, 6 foge do range possível para substring.
+--------------------------------------------------------------------------------
+Which letters will print when this code is run?
+public class Application {
+    public static void main(String[] args) {
+        try {
+            System.out.println("A");
+            badMethod();
+            System.out.println("B");
+        } catch (Exception ex) {
+            System.out.println("C");
+        } finally {
+            System.out.println("D");
+        }
+    }
+
+    public static void badMethod () {
+        throw new Error();
+    }
+}
+- A and D
+--------------------------------------------------------------------------------
+What is the output of this code?
+public class Application {
+    public static void main(String[] args) {
+        String message = "Hello";
+        for (int i = 0; i < message.length(); i++) {
+            System.out.print(message.charAt(i+1));
+        }
+    }
+}
+- Irá imprimir ello porém irá ocorrer uma exceção pois não existe a posição 5
+--------------------------------------------------------------------------------
+what is the output of this code:
+public class Application {
+    public static void main(String[] args) {
+        int array[] = {1,2,3,4};
+        for (int i = 0; i < array.size(); i++) {
+            System.out.println(array[i]);
+        }
+    }
+}
+- não vai nem rodar porque .size() é um metodo de List.
+--------------------------------------------------------------------------------
+What will this program print out to the console when executed?
+import java.util.LinkedList;
+
+public class Application {
+    public static void main(String[] args) {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.add(5);
+        list.add(1);
+        list.add(10);
+        System.out.println(list);
+    }
+}
+
+- [5, 1, 10]
+--------------------------------------------------------------------------------
+What is the result of the code:
+public class Application {
+    Object message() {
+        return "Hello!";
+    }
+
+    public static void main(String[] args) {
+        System.out.print(new Application().message());
+        System.out.print(new Mains2().message());
+    }
+}
+
+class Mains2 extends  Application {
+    String message() {
+        return "World!";
+    }
+}
+- Hello!World!
+--------------------------------------------------------------------------------
+What is the result of the code below:
+public class Application {
+    static int count = 0;
+    public static void main(String[] args) {
+        if (count < 3) {
+            count++;
+            main(null);
+        } else {
+            return;
+        }
+
+        System.out.println("Hello World!");
+    }
+}
+- Vai printar Hello World 3 vezes pois a chamada do método main(null) não vai interromper o fluxo.
+--------------------------------------------------------------------------------
+What is the result of the code below?
+
+public class Application {
+    static int count = 0;
+    public static void main(String[] args) {
+        List<Boolean> list = new ArrayList<>();
+        list.add(true);
+        list.add(Boolean.parseBoolean("false"));
+        list.add(Boolean.TRUE);
+        System.out.println(list.size());
+        System.out.println(list.get(1) instanceof Boolean);
+    }
+}
+
+- 3 , true 
+--------------------------------------------------------------------------------
